@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Wed Apr 10 15:31:40 2024\n"
+"POT-Creation-Date: Mon Jul 21 08:54:16 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -20,62 +20,676 @@ msgstr ""
 msgid "intermediate goal solved! 🎉"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
+#: Game.Levels.W01_Foundation.L01_GoalsAndAxioms
+msgid "目标与公理 (Goals and Axioms)"
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L01_GoalsAndAxioms
+msgid "欢迎来到 Lean 的世界，证明者！\n"
+"\n"
+"在你的屏幕右侧，你会看到一个 **目标 (Goal)**。你的任务就是运用逻辑和策略，向 Lean 证明这个目标是真的。\n"
+"\n"
+"目前的目标是：\n"
+"```\n"
+"⊢ 2 + 2 = 4\n"
+"```\n"
+"这里的 `⊢` 符号读作“证明目标”(turnstile)。它左边是你的已知条件（现在是空的），右边是需要你证明的结论。\n"
+"\n"
+"让我们从最简单的策略开始吧！"
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L01_GoalsAndAxioms
+msgid "当目标 `⊢ P` 中的 `P` 在计算上为真时（例如 `2+2` 的计算结果就是 `4`），你可以使用 `rfl` (reflexivity, 反身性) 策略来完成证明。请在下方代码框中输入 `rfl` 并点击“执行”。"
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L01_GoalsAndAxioms
+msgid "太棒了！你已经完成了你的第一个证明！\n"
+"\n"
+"你刚刚学会了 Lean 中最基础也是最重要的策略之一：`rfl`。它用于证明那些“不言自明”的等式。\n"
+"\n"
+"让我们进入下一关，学习更多强大的策略吧！"
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L02_LogicalOperators
 msgid "Hello World"
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
+#: Game.Levels.W01_Foundation.L02_LogicalOperators
 msgid "This text is shown as first message when the level is played.\n"
 "You can insert hints in the proof below. They will appear in this side panel\n"
 "depending on the proof a user provides."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
+#: Game.Levels.W01_Foundation.L02_LogicalOperators
 msgid "You can either start using `«{h}»` or `«{g}»`."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
+#: Game.Levels.W01_Foundation.L02_LogicalOperators
 msgid "You should use `«{h}»` now."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
+#: Game.Levels.W01_Foundation.L02_LogicalOperators
 msgid "You should use `«{g}»` now."
 msgstr ""
 
-#: Game.Levels.DemoWorld.L01_HelloWorld
+#: Game.Levels.W01_Foundation.L02_LogicalOperators
 msgid "This last message appears if the level is solved."
 msgstr ""
 
-#: Game.Levels.DemoWorld
-msgid "Demo World"
+#: Game.Levels.W01_Foundation.L03_DeductiveReasoning
+msgid "Hello World"
 msgstr ""
 
-#: Game.Levels.DemoWorld
+#: Game.Levels.W01_Foundation.L03_DeductiveReasoning
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L03_DeductiveReasoning
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L03_DeductiveReasoning
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L03_DeductiveReasoning
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L03_DeductiveReasoning
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L04_ProofByContradiction
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L04_ProofByContradiction
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L04_ProofByContradiction
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L04_ProofByContradiction
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L04_ProofByContradiction
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L04_ProofByContradiction
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W01_Foundation
+msgid "第一关：Lean 的基石"
+msgstr ""
+
+#: Game.Levels.W01_Foundation
 msgid "This introduction is shown before one enters level 1 of the demo world. Use markdown."
 msgstr ""
 
-#: Game
-msgid "Hello World Game"
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "Hello World"
 msgstr ""
 
-#: Game
-msgid "This text appears on the starting page where one selects the world/level to play.\n"
-"You can use markdown."
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
 msgstr ""
 
-#: Game
-msgid "Here you can put additional information about the game. It is accessible\n"
-"from the starting through the drop-down menu.\n"
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples
+msgid "第二关：勾股数的奥秘"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples
+msgid "欢迎来到勾股数的世界！\n"
 "\n"
-"For example: Game version, Credits, Link to Github and Zulip, etc.\n"
+"早在费马之前，古人就已经对满足 `a² + b² = c²` 的整数解了如指掌。这些数组被称为“勾股数”或“毕达哥拉斯三元组”。\n"
 "\n"
-"Use markdown."
+"在这个世界里，我们将作为一个真正的数论学家，一步步揭开这些数字的神秘面纱。我们将从最基础的奇偶性分析开始，通过巧妙的代数代换，最终推导出找出所有本原勾股数组的通用“魔法公式”。\n"
+"\n"
+"完成这个世界的挑战，你将获得一个强大的定理，它将是我们在最终之战中击败费马的关键武器之一。"
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L01_SquaresMod4
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L01_SquaresMod4
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L01_SquaresMod4
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L01_SquaresMod4
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L01_SquaresMod4
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L01_SquaresMod4
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L02_CoprimeSquaresDecomposition
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L02_CoprimeSquaresDecomposition
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L02_CoprimeSquaresDecomposition
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L02_CoprimeSquaresDecomposition
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L02_CoprimeSquaresDecomposition
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory.L02_CoprimeSquaresDecomposition
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory
+msgid "第三关：数论的利器"
+msgstr ""
+
+#: Game.Levels.W03_NumberTheoryArmory
+msgid "每一位伟大的证明者，都需要一把称手的兵器。在这个世界里，我们将深入数论的兵器库，亲手锻造两件在最终之战中无往不利的神器。\n"
+"\n"
+"首先，我们将探索平方数在模4世界中的奇妙规律。然后，我们将铸造一枚威力无穷的“平方分裂护符”——它能揭示互质数与平方数之间深刻的内在联系。\n"
+"\n"
+"熟练掌握这些工具，你将拥有挑战更高难度证明的信心与力量。"
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L01_LeastElement
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L01_LeastElement
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L01_LeastElement
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L01_LeastElement
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L01_LeastElement
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L01_LeastElement
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L02_Sqrt2IsIrrational
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L02_Sqrt2IsIrrational
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L02_Sqrt2IsIrrational
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L02_Sqrt2IsIrrational
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L02_Sqrt2IsIrrational
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent.L02_Sqrt2IsIrrational
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent
+msgid "第四关：无限下降的艺术"
+msgstr ""
+
+#: Game.Levels.W04_InfiniteDescent
+msgid "欢迎来到思想的殿堂。在这里，你将学习一种由费马本人发明的、极其强大而优美的证明技巧——**无限下降法**。\n"
+"\n"
+"这种方法的核心思想如同一座通往悖论的无限阶梯。我们将通过一个数学史上最经典的例子——证明√2是无理数——来让你亲身体验这种方法的威力。\n"
+"\n"
+"一旦你掌握了这种从“假设存在最小解”出发，最终构造出“一个更小的解”从而导出矛盾的艺术，你就掌握了打开费马大定理最终大门的钥匙。"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L01_SettingTheStage
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L01_SettingTheStage
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L01_SettingTheStage
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L01_SettingTheStage
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L01_SettingTheStage
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L01_SettingTheStage
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L02_ReductionToPythagorean
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L02_ReductionToPythagorean
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L02_ReductionToPythagorean
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L02_ReductionToPythagorean
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L02_ReductionToPythagorean
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L02_ReductionToPythagorean
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L03_ApplyingGeneralSolution
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L03_ApplyingGeneralSolution
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L03_ApplyingGeneralSolution
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L03_ApplyingGeneralSolution
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L03_ApplyingGeneralSolution
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L03_ApplyingGeneralSolution
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L04_AnalyzingY2
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L04_AnalyzingY2
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L04_AnalyzingY2
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L04_AnalyzingY2
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L04_AnalyzingY2
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L04_AnalyzingY2
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L05_ApplyingCoprimeCharm
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L05_ApplyingCoprimeCharm
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L05_ApplyingCoprimeCharm
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L05_ApplyingCoprimeCharm
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L05_ApplyingCoprimeCharm
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L05_ApplyingCoprimeCharm
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L06_ConstructingSmallerSolution
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L06_ConstructingSmallerSolution
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L06_ConstructingSmallerSolution
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L06_ConstructingSmallerSolution
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L06_ConstructingSmallerSolution
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L06_ConstructingSmallerSolution
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L07_TheKillingBlow
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L07_TheKillingBlow
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L07_TheKillingBlow
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L07_TheKillingBlow
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L07_TheKillingBlow
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L07_TheKillingBlow
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L08_FinalVictory
+msgid "Hello World"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L08_FinalVictory
+msgid "This text is shown as first message when the level is played.\n"
+"You can insert hints in the proof below. They will appear in this side panel\n"
+"depending on the proof a user provides."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L08_FinalVictory
+msgid "You can either start using `«{h}»` or `«{g}»`."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L08_FinalVictory
+msgid "You should use `«{h}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L08_FinalVictory
+msgid "You should use `«{g}»` now."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat.L08_FinalVictory
+msgid "This last message appears if the level is solved."
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat
+msgid "最终关：征服费马"
+msgstr ""
+
+#: Game.Levels.W05_ConqueringFermat
+msgid "证明者，你已经走到了旅程的终点。\n"
+"\n"
+"你已在 Lean 的世界里打下坚实的基础，你掌握了勾股数的奥秘，你手握数论的利器，更领悟了无限下降的深邃艺术。现在，是时候集结你所有的知识与勇气，向三百多年前费马本人留下的挑战发起最后的总攻了。\n"
+"\n"
+"在这最后的战场上，你将综合运用之前学到的一切，一步步将费马的防线瓦解，最终导出那个经典的矛盾，摘下这颗数学王冠上的明珠。\n"
+"\n"
+"历史将铭记这一刻。祝你好运！"
 msgstr ""
 
 #: Game
-msgid "Game Template"
+msgid "费马大定理：n=4的陨落"
 msgstr ""
 
 #: Game
-msgid "You should use this game as a template for your own game and add your own levels."
+msgid "欢迎来到 Lean 的世界，证明者！\n"
+"\n"
+"在这场史诗般的旅程中，你将不仅仅是学习一门新的语言，更是要亲手重现数学史上最璀璨的明珠之一的之一——费马大定理（n=4情况）的证明。\n"
+"\n"
+"我们将从 Lean 的最基本操作开始，一步步为你装备强大的数论工具和逻辑策略。你将揭开勾股数的秘密，掌握“无穷递降法”这门古老的证明艺术，并最终集结所有智慧，向费马的终极挑战发起冲击。\n"
+"\n"
+"准备好了吗？让我们开始铸造你的第一个证明吧！"
+msgstr ""
+
+#: Game
+msgid "### 游戏信息\n"
+"\n"
+"* **游戏名称:** 费马大定理：n=4的陨落\n"
+"* **版本:** 0.1\n"
+"* **学习目标:**\n"
+"    * 掌握 Lean 4 的基本证明技巧。\n"
+"    * 理解勾股数的通解公式推导。\n"
+"    * 掌握“无穷递降法”的证明思想。\n"
+"    * 独立完成费马大定理 n=4 情况的完整形式化证明。\n"
+"* **致谢:**\n"
+"    * 本游戏的证明思路基于历史上众多数学家的伟大工作。\n"
+"    * 游戏框架由 `lean4game` 社区提供。\n"
+"* **项目仓库:** [FermatGameN4 on GitHub](https://github.com/你的用户名/FermatGameN4)"
+msgstr ""
+
+#: Game
+msgid "费马大定理 n=4 证明"
+msgstr ""
+
+#: Game
+msgid "一个引导式的 Lean 教程游戏，带领玩家从零开始，逐步完成费马大定理 n=4 情况的形式化证明。"
 msgstr ""
