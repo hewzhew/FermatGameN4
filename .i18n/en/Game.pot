@@ -1,7 +1,7 @@
 msgid ""
 msgstr "Project-Id-Version: Game v4.7.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: Mon Jul 21 08:54:16 2025\n"
+"POT-Creation-Date: Tue Jul 22 02:58:57 2025\n"
 "Last-Translator: \n"
 "Language-Team: none\n"
 "Language: en\n"
@@ -51,81 +51,125 @@ msgid "太棒了！你已经完成了你的第一个证明！\n"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L02_LogicalOperators
-msgid "Hello World"
+msgid "蕴含与假设 (Implication and Hypotheses)"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L02_LogicalOperators
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "在上一关中，我们证明了一个简单的等式。现在，让我们来处理更复杂的逻辑结构！\n"
+"\n"
+"在数学中，我们经常需要证明形如 **“如果 P 成立，那么 Q 也成立”** 的命题。在 Lean 中，这被写作 `P → Q`。\n"
+"\n"
+"要证明 `P → Q`，标准的做法是：\n"
+"1.  我们先**假设** `P` 是真的。\n"
+"2.  在这个假设下，我们推导出 `Q` 也必须是真的。\n"
+"\n"
+"在 Lean 中，我们使用 `intro` 策略来引入一个假设。"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L02_LogicalOperators
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "在这一关，你的目标是 `x + x = 4`，并且你有一个已知条件 `h_x_is_2 : x = 2`。\n"
+"\n"
+"`rw` 策略非常强大。当你使用 `rw [h_x_is_2]` 时，它不仅会把目标中的 `x` 替换为 `2`，还会自动尝试用 `rfl` 来关闭简化后的目标。\n"
+"\n"
+"试试看，只用一步 `rw` 能不能直接解决问题！"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L02_LogicalOperators
-msgid "You should use `«{h}»` now."
-msgstr ""
-
-#: Game.Levels.W01_Foundation.L02_LogicalOperators
-msgid "You should use `«{g}»` now."
-msgstr ""
-
-#: Game.Levels.W01_Foundation.L02_LogicalOperators
-msgid "This last message appears if the level is solved."
+msgid "非常出色！一步到位！\n"
+"\n"
+"你刚刚见识到了 `rw` 策略的强大之处。它在重写之后，会自动进行一次“微不足道的”尝试（比如 `rfl`），这在很多情况下能帮你节省一步操作。\n"
+"\n"
+"你已经学会了如何利用已知条件来推进证明。在下一关，我们将正式学习如何处理 `P → Q` 形式的目标，并亲自使用 `intro` 策略来创造你自己的假设！"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L03_DeductiveReasoning
-msgid "Hello World"
+msgid "演绎推理 (Deductive Reasoning)"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L03_DeductiveReasoning
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "做得好！你已经准备好学习 Lean 中最核心的逻辑推理方式之一了。\n"
+"\n"
+"正如我们在上一关的介绍中提到的，要证明一个 **“如果 P 则 Q”** (`P → Q`) 的命题，我们通常会假设 `P` 成立，然后在此基础上证明 `Q`。\n"
+"\n"
+"Lean 通过 `intro` 策略完美地实现了这一点。当你的目标是 `P → Q` 时，执行 `intro h` 会：\n"
+"1.  将 `P` 作为一个新的假设 `h : P` 添加到你的已知条件中。\n"
+"2.  将你的证明目标更新为 `Q`。\n"
+"\n"
+"让我们来亲手实践一下吧！"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L03_DeductiveReasoning
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "你当前的目标是 `x = 2 → x + x = 4`。这是一个蕴含式。\n"
+"\n"
+"请在下面的代码框中输入 `intro hx`，然后点击“执行”，看看你的目标和已知条件会发生什么变化。"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L03_DeductiveReasoning
-msgid "You should use `«{h}»` now."
+msgid "看到了吗？`intro hx` 就像施展了魔法：\n"
+"\n"
+"1.  `x = 2` 不再是目标的一部分，而是变成了你的一个已知条件 `hx : x = 2`。\n"
+"2.  你的新目标简化为了 `x + x = 4`。\n"
+"\n"
+"现在的情况和你上一关的处境一模一样。使用你已经掌握的 `rw` 策略来完成最后的证明吧！"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L03_DeductiveReasoning
-msgid "You should use `«{g}»` now."
-msgstr ""
-
-#: Game.Levels.W01_Foundation.L03_DeductiveReasoning
-msgid "This last message appears if the level is solved."
-msgstr ""
-
-#: Game.Levels.W01_Foundation.L04_ProofByContradiction
-msgid "Hello World"
+msgid "太精彩了！\n"
+"\n"
+"你已经掌握了证明蕴含命题的核心方法：`intro`。这个策略是你工具箱里最重要的工具之一，它能帮你把复杂的问题分解成“假设”和“新目标”这样更小的部分。\n"
+"\n"
+"在下一关，我们将面对一个更具挑战性的逻辑谜题：反证法。"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L04_ProofByContradiction
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "反证法 (Proof by Contradiction)"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L04_ProofByContradiction
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "欢迎来到第一世界的最终挑战！你将学习一种威力无穷的证明技巧：**反证法**。\n"
+"\n"
+"反证法的思想非常优美：\n"
+"1.  要证明一个命题 `P` 是真的。\n"
+"2.  我们先**假设 `P` 是假的** (即 `¬P` 成立)。\n"
+"3.  从这个“错误的”假设出发，进行一系列逻辑推理，最终导出一个**荒谬的、自相矛盾**的结论 (在 Lean 中，这个终极矛盾被称为 `False`)。\n"
+"4.  既然一个错误的假设导出了一个荒谬的结果，那就说明我们最初的假设一定是错的。因此，`P` 必须为真！\n"
+"\n"
+"在 Lean 中，`by_contra h` 策略就是为此而生。它会帮你假设一个 `h : ¬P`，并把你的目标直接变成 `False`。"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L04_ProofByContradiction
-msgid "You should use `«{h}»` now."
+msgid "我们的目标是证明 `x + 1 ≠ 1`。\n"
+"\n"
+"让我们用反证法来证明它。请在下方输入 `by_contra h_contra`，这会引入一个假设 `h_contra`，它是我们目标的否定，即 `¬(x + 1 ≠ 1)`。"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L04_ProofByContradiction
-msgid "You should use `«{g}»` now."
+msgid "太棒了！你的目标现在是 `False`，并且你获得了一个新假设 `h_contra : ¬(x + 1 ≠ 1)`。\n"
+"\n"
+"一个“非不等于”就是“等于”。所以 `h_contra` 实际上就意味着 `x + 1 = 1`。\n"
+"\n"
+"现在，我们已知 `x + 1 = 1`，我们可以从中推断出 `x = 0`。Lean 有一个定理叫 `Nat.add_right_cancel` 可以帮我们做到这一点。\n"
+"\n"
+"使用 `have h_x_is_0 : x = 0 := Nat.add_right_cancel h_contra` 来得到这个新事实。"
 msgstr ""
 
 #: Game.Levels.W01_Foundation.L04_ProofByContradiction
-msgid "This last message appears if the level is solved."
+msgid "现在，请仔细审视你的已知条件！你同时拥有：\n"
+"\n"
+"1. `h_x_neq_0 : x ≠ 0` (即 `x = 0 → False`)\n"
+"2. `h_x_is_0 : x = 0`\n"
+"\n"
+"这显然是一个尖锐的矛盾。`h_x_neq_0` 就像一个函数，你只要给它一个 `x=0` 的证明（也就是 `h_x_is_0`），它就能产出 `False`——这正是我们当前的目标！\n"
+"\n"
+"使用 `exact h_x_neq_0 h_x_is_0` 来引爆这个矛盾，完成证明！"
+msgstr ""
+
+#: Game.Levels.W01_Foundation.L04_ProofByContradiction
+msgid "完美！你已经成功地运用了反证法，并完成了第一大关的所有挑战！\n"
+"\n"
+"`by_contra` 是一个极其强大的策略。在未来的旅程中，当你面对一个看似显然，却又不知如何正面下手的难题时，不妨试试反证法，或许就能柳暗花明。\n"
+"\n"
+"恭喜你完成了基础训练！现在，你已经解锁了通往更广阔数学世界的道路。"
 msgstr ""
 
 #: Game.Levels.W01_Foundation
@@ -137,159 +181,518 @@ msgid "This introduction is shown before one enters level 1 of the demo world. U
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
-msgid "Hello World"
+msgid "偶数与奇数 (Evens and Odds)"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "欢迎来到勾股数的世界！在开始探索 `a² + b² = c²` 的奥秘之前，我们需要先掌握一些关于数字奇偶性的基本工具。\n"
+"\n"
+"在 Lean 中，一个自然数 `n` 是：\n"
+"* **偶数 (Even)**，如果它能被写作 `2 * k` 的形式，其中 `k` 是某个自然数。\n"
+"* **奇数 (Odd)**，如果它能被写作 `2 * k + 1` 的形式。\n"
+"\n"
+"在这一关，我们将证明关于平方数奇偶性的两个重要引理。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "`Even_sq_of_even (n : Nat) (h_even : Even n) : Even (n ^ 2)` 是一个引理，它证明了如果一个自然数 `n` 是偶数，那么它的平方 `n^2` 也一定是偶数。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
-msgid "You should use `«{h}»` now."
+msgid "我们的目标是证明：如果 `n` 是偶数，那么 `n^2` 也是偶数。\n"
+"\n"
+"已知 `h_even : Even n`，这意味着存在一个自然数 `k`，使得 `n = 2 * k`。\n"
+"\n"
+"使用 `rcases h_even with ⟨k, rfl⟩` 来分解这个假设。`rfl` 会自动将 `n` 替换为 `2 * k`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
-msgid "You should use `«{g}»` now."
+msgid "很好！现在我们的目标变成了证明 `Even ((2 * k) ^ 2)`。\n"
+"\n"
+"根据偶数的定义，我们需要找到一个自然数（称之为 `m`），使得 `(2 * k) ^ 2 = 2 * m`。\n"
+"\n"
+"首先，让我们展开 `(2 * k) ^ 2`。强大的 `ring` 策略可以帮我们处理多项式计算。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
-msgid "This last message appears if the level is solved."
+msgid "`ring` 策略已经将目标简化为 `Even (4 * k ^ 2)`。\n"
+"\n"
+"现在，我们需要明确地给出一个自然数 `m`，使得 `4 * k ^ 2 = 2 * m`。\n"
+"\n"
+"看起来 `m` 应该是 `2 * k ^ 2`。使用 `use 2 * k ^ 2` 来告诉 Lean 你的构造。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "最后一步！目标变成了 `4 * k ^ 2 = 2 * (2 * k ^ 2)`。\n"
+"\n"
+"这又是一个纯粹的代数计算。再次使用 `ring` 来终结它！"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "漂亮！你证明了偶数的平方仍然是偶数。\n"
+"\n"
+"现在，让我们用类似的方法来证明奇数的情况。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "`Odd_sq_of_odd (n : Nat) (h_odd : Odd n) : Odd (n ^ 2)` 是一个引理，它证明了如果一个自然数 `n` 是奇数，那么它的平方 `n^2` 也一定是奇数。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "这次，我们的目标是证明奇数的平方仍然是奇数。\n"
+"\n"
+"和刚才一样，先用 `rcases h_odd with ⟨k, rfl⟩` 来分解 `Odd n` 的定义。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "目标变成了 `Odd ((2 * k + 1) ^ 2)`。\n"
+"\n"
+"根据奇数的定义，我们需要找到一个自然数 `m`，使得 `(2 * k + 1) ^ 2 = 2 * m + 1`。\n"
+"\n"
+"同样，先用 `ring` 展开左边的表达式。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "目标是 `Odd (4 * k ^ 2 + 4 * k + 1)`。\n"
+"\n"
+"我们需要把它整理成 `2 * m + 1` 的形式。\n"
+"\n"
+"`4 * k ^ 2 + 4 * k` 显然可以提出一个因子2。`m` 应该是什么呢？\n"
+"\n"
+"使用 `use 2 * k ^ 2 + 2 * k`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "最后一步，`ring` 会出手相助。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L01_EvensAndOdds
+msgid "完美！你已经掌握了处理奇偶数平方的基本技巧。\n"
+"\n"
+"这两个看似简单的引理，将是我们在后续关卡中分析勾股数性质的基石。准备好进入下一关，看看它们如何发挥作用吧！"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
-msgid "Hello World"
+msgid "勾股数的奇偶分析"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "在上一关，我们掌握了平方数的奇偶性。现在，是时候将这些知识应用到真正的战场上了：`a² + b² = c²`。\n"
+"\n"
+"一个“本原”勾股数组指的是 `a`, `b`, `c` 两两互质。这意味着 `a` 和 `b` 不可能都是偶数（否则它们有公因数2）。\n"
+"\n"
+"那么，`a` 和 `b` 的奇偶性只剩下三种可能：一偶一奇，一奇一偶，或者两奇。\n"
+"\n"
+"在这一关，我们的目标就是证明：**`a` 和 `b` 不可能同时为奇数**。我们将使用反证法来完成这个证明。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "`even_iff_even_sq (n : Nat) : Even n ↔ Even (n ^ 2)` 是一个强大的双向引理。它告诉我们，一个数 `n` 和它的平方 `n^2` 的奇偶性是完全一致的。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
-msgid "You should use `«{h}»` now."
+msgid "我们的目标是 `False`，这强烈暗示了我们要使用反证法。实际上，我们已经身处反证法的逻辑之中了：我们假设了 `a` 和 `b` 都是奇数，并要从中导出一个矛盾。\n"
+"\n"
+"首先，根据上一关的结论 `Odd_sq_of_odd`，我们知道 `a^2` 和 `b^2` 也是奇数。\n"
+"让我们用 `have` 来声明这两个新事实。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
-msgid "You should use `«{g}»` now."
+msgid "很好。现在我们知道 `a^2` 和 `b^2` 都是奇数。那么它们的和 `a^2 + b^2` 呢？\n"
+"\n"
+"两个奇数的和是偶数。让我们来证明这一点。\n"
+"`have h_sum_even : Even (a^2 + b^2) := by ...`"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
-msgid "This last message appears if the level is solved."
+msgid "太棒了！我们证明了 `a^2 + b^2` 是偶数。\n"
+"\n"
+"再看看我们的已知条件 `h_pyth : a^2 + b^2 = c^2`。这说明 `c^2` 也是偶数！\n"
+"使用 `rw [h_pyth] at h_sum_even` 来更新我们的结论。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "现在我们有了 `h_c_sq_even : Even (c^2) := h_sum_even`。\n"
+"\n"
+"是时候使用我们为你提供的强大引理 `even_iff_even_sq` 了。它告诉我们，如果 `c^2` 是偶数，那么 `c` 本身也必须是偶数。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "我们离矛盾越来越近了！\n"
+"\n"
+"我们已经有了 `a`, `b` 是奇数，`c` 是偶数。让我们把它们的定义展开，并为每个等式命名。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "现在，将这些代入最初的等式 `h_pyth` 中。\n"
+"使用 `have h_contra := h_pyth`，然后用 `rw` 把所有变量都替换掉。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "是时候让 `ring` 大显身手了！`ring` 策略可以直接作用于一个假设。\n"
+"使用 `ring_nf at h_contra` 来化简这个等式。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "化简后我们得到 `4 * k ^ 2 + 4 * k + 4 * l ^ 2 + 4 * l + 2 = 4 * m ^ 2`。\n"
+"\n"
+"这个等式的左边除以2是奇数，右边除以2是偶数。这是一个矛盾！\n"
+"\n"
+"为了让 Lean “看”到这个矛盾，我们可以两边同时除以2。\n"
+"`have h_almost_there : 2 * (k ^ 2 + k + l ^ 2 + l) + 1 = 2 * m ^ 2 := by ...`"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "`2 * ... + 1 = 2 * ...`\n"
+"\n"
+"这告诉我们一个奇数等于一个偶数。这是不可能的！\n"
+"\n"
+"有一个非常巧妙的方法来揭示这个矛盾：对等式两边同时进行模2运算。\n"
+"\n"
+"使用 `have h_mod_2 := congr_arg (fun n => n % 2) h_almost_there`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "太棒了！我们得到了一个新的假设 `h_mod_2`。\n"
+"\n"
+"Lean 有时会用 `(fun n => n % 2) (...)` 这种函数形式来表示模运算，而不是我们更熟悉的 `(...) % 2`。\n"
+"为了让 `rw` 策略能看懂这个表达式，我们先用 `dsimp at h_mod_2` (definitional simplify) 来把它化简成标准形式。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "现在 `h_mod_2` 变成了 `(2 * ... + 1) % 2 = (2 * m ^ 2) % 2`。\n"
+"我们可以处理等式的左边了。根据模运算的加法法则 (`Nat.add_mod`)，这等于 `((2 * ...) % 2 + 1 % 2) % 2`。\n"
+"\n"
+"使用 `rw [Nat.add_mod] at h_mod_2`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "很好！现在我们来处理 `(2 * ...) % 2`。任何2的倍数模2都等于0。\n"
+"\n"
+"使用 `rw [Nat.mul_mod_right] at h_mod_2` 来化简两边的表达式。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "`h_mod_2 : (0 + 1) % 2 = 0`\n"
+"\n"
+"我们离终点只有一步之遥！`norm_num` 策略非常强大，它不仅能计算出 `(0+1)%2` 的结果是 `1`，还能立刻发现 `1 = 0` 是一个无法成立的矛盾，并直接用它来解决我们的 `False` 目标！\n"
+"\n"
+"使用 `norm_num at h_mod_2` 来给予最后一击！"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L02_ParityAnalysis
+msgid "干得漂亮！你通过严谨的推理，证明了 `a` 和 `b` 不可能同时为奇数，成功排除了一个重要的错误情况。\n"
+"\n"
+"现在我们知道了，对于任何本原勾股数组，`a` 和 `b` 必然一奇一偶。这个结论将是后续推导通解公式的关键。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L03_Substitution
-msgid "Hello World"
+msgid "代换与简化"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L03_Substitution
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "在上一关，我们成功证明了对于一个本原勾股数组 `(a, b, c)`，`a` 和 `b` 必然一奇一偶。\n"
+"\n"
+"现在，我们可以不失一般性地**假设 `a` 是偶数，`b` 是奇数**。（因为如果 `a` 是奇数 `b` 是偶数，我们只需交换它们的位置即可，结论是相同的。）\n"
+"\n"
+"我们的目标是，将这个奇偶性的信息代入 `a² + b² = c²` 中，看看能得到什么新的线索。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L03_Substitution
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "在这一关，我们的目标是证明三个关于平方数奇偶性的结论。\n"
+"\n"
+"1. `Even (a^2)` (偶数的平方是偶数)\n"
+"2. `Odd (b^2)` (奇数的平方是奇数)\n"
+"3. `Odd (c^2)` (一个偶数和一个奇数的平方和是奇数)\n"
+"\n"
+"让我们用 `constructor` 来逐个解决它们。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L03_Substitution
-msgid "You should use `«{h}»` now."
+msgid "第一个目标 `Even (a^2)`。\n"
+"我们已知 `h_a_even : Even a`。利用第一关学到的 `Even_sq_of_even` 定理来证明它。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L03_Substitution
-msgid "You should use `«{g}»` now."
+msgid "很好！现在是第二个目标 `Odd (b^2)`。\n"
+"同样，利用 `Odd_sq_of_odd` 定理。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L03_Substitution
-msgid "This last message appears if the level is solved."
+msgid "最后，我们需要证明 `Odd (c^2)`。\n"
+"\n"
+"我们知道 `c^2 = a^2 + b^2`。而我们已经知道 `a^2` 是偶数，`b^2` 是奇数。\n"
+"一个偶数和一个奇数的和是奇数。\n"
+"\n"
+"让我们用 `rw [←h_pyth]` 将目标替换为 `Odd (a^2 + b^2)`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "目标是 `Odd (a^2 + b^2)`。\n"
+"\n"
+"我们已知 `Even (a^2)` 和 `Odd (b^2)`。让我们把它们的定义展开。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "目标 `Odd (2 * k + (2 * l + 1))`。\n"
+"\n"
+"我们需要把它整理成 `2 * m + 1` 的形式。\n"
+"使用 `use k + l`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "最后一步，交给 `ring`！"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L03_Substitution
+msgid "非常出色！\n"
+"\n"
+"通过简单的代换，我们不仅再次确认了平方数的奇偶性，还得到了一个至关重要的信息：**`c` 本身也必须是奇数**。\n"
+"\n"
+"现在我们明确了 `a` 是偶数，`b` 是奇数，`c` 是奇数。在下一关，我们将利用这个信息，进行一次天才般的代数变形——平方差公式！"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
-msgid "Hello World"
+msgid "平方差公式"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "在上一关，我们确定了本原勾股数组 `(a, b, c)` 中 `a` 是偶数，而 `b` 和 `c` 都是奇数。\n"
+"\n"
+"现在，让我们对 `a² + b² = c²` 这个核心等式进行一次巧妙的变形。我们的目标是孤立偶数项 `a²`，看看能发现什么。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "我们的目标是证明 `a^2 = (c - b) * (c + b)`。\n"
+"\n"
+"我们将从等式的右边开始，利用著名的平方差公式 `c^2 - b^2 = (c + b) * (c - b)` 来进行重写。\n"
+"\n"
+"请注意，我们目标中的乘法顺序是 `(c - b) * (c + b)`，而定理 `Nat.sq_sub_sq` 中的是 `(c + b) * (c - b)`。\n"
+"为了让 `rw` 能够匹配，我们首先需要使用乘法交换律 `mul_comm` 来交换目标中乘法的顺序。\n"
+"\n"
+"使用 `rw [mul_comm]`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
-msgid "You should use `«{h}»` now."
+msgid "很好！目标现在是 `a^2 = (c + b) * (c - b)`，这与平方差公式的结构完全匹配了。\n"
+"\n"
+"现在使用 `rw [←Nat.sq_sub_sq]`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
-msgid "You should use `«{g}»` now."
+msgid "太棒了！目标变成了 `a^2 = c^2 - b^2`。\n"
+"\n"
+"这个等式可以通过移项从 `a^2 + b^2 = c^2` 得到。\n"
+"\n"
+"让我们使用 `rw [←h_pyth]`，将 `c^2` 替换为 `a^2 + b^2`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
-msgid "This last message appears if the level is solved."
+msgid "目标现在是 `a^2 = a^2 + b^2 - b^2`。\n"
+"\n"
+"根据自然数的减法性质，`x + y - y = x`。\n"
+"\n"
+"使用 `rw [Nat.add_sub_cancel]` 来完成最后的证明。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L04_DifferenceOfSquares
+msgid "非常漂亮！\n"
+"\n"
+"你已经成功地将加法关系 `a² + b² = c²` 转化为了一个关于乘法的关系 `a² = (c - b) * (c + b)`。\n"
+"\n"
+"这个看似简单的变形是解开整个谜题的钥匙。它告诉我们，`a²` 这个平方数可以被分解为两个因数 `(c - b)` 和 `(c + b)` 的乘积。\n"
+"\n"
+"在下一关，我们将深入研究这两个因数的性质，特别是它们的互质性。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
-msgid "Hello World"
+msgid "互质性 (Coprimality)"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "在上一关，我们得到了 `a² = (c - b) * (c + b)`。这是一个关于乘积的等式。\n"
+"\n"
+"为了利用第三大关的“平方分裂护符”，我们需要证明 `(c - b)` 和 `(c + b)` 这两个因数是互质的（或者说，它们除了公因数2之外没有其他公因数）。\n"
+"\n"
+"在这一关，我们的目标就是证明 `gcd(c - b, c + b) = 2`。我们将通过证明它们的最大公约数 `d` 既整除 2 又被 2 整除来完成。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "我们的目标是证明 `Nat.gcd (c - b) (c + b) = 2`。\n"
+"\n"
+"首先，让我们设 `d = Nat.gcd (c - b) (c + b)`。\n"
+"根据最大公约数的定义，`d` 必须整除 `(c - b)` 和 `(c + b)`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
-msgid "You should use `«{h}»` now."
+msgid "如果 `d` 整除两个数，那么它也整除这两个数的和与差。\n"
+"\n"
+"和: `(c + b) + (c - b) = 2 * c`\n"
+"差: `(c + b) - (c - b) = 2 * b`\n"
+"\n"
+"让我们来证明 `d` 整除 `2 * c` 和 `2 * b`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
-msgid "You should use `«{g}»` now."
+msgid "现在我们知道 `d` 整除 `2*b` 和 `2*c`。这意味着 `d` 是 `2*b` 和 `2*c` 的公约数，所以它必须整除它们的最大公约数 `Nat.gcd (2 * b) (2 * c)`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
-msgid "This last message appears if the level is solved."
+msgid "接下来，我们需要化简 `Nat.gcd (2 * b) (2 * c)`。\n"
+"利用 `Nat.gcd_mul_left` 定理，我们可以提出公因数2。\n"
+"\n"
+"已知 `b` 和 `c` 互质 (`h_coprime`)，所以 `Nat.gcd b c = 1`。\n"
+"\n"
+"`have h_gcd_is_2 : Nat.gcd (2 * b) (2 * c) = 2 := by ...`"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "太棒了！我们证明了 `d` 整除 2。这意味着 `d` 只可能是 1 或 2。\n"
+"\n"
+"现在，我们还需要证明 2 也整除 `d`。\n"
+"为此，我们只需证明 `c - b` 和 `c + b` 都是偶数，即都能被2整除。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "为了证明 `2 ∣ d`，我们需要先证明 `2` 是 `c-b` 和 `c+b` 的公因数。\n"
+"\n"
+"让我们先证明 `(c - b) % 2 = 0`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "这个目标等价于证明 `Even (c - b)`。\n"
+"\n"
+"我们已知 `c` 和 `b` 都是奇数。让我们回到它们的定义：\n"
+"`rcases h_c_odd with ⟨m, hm⟩`\n"
+"`rcases h_b_odd with ⟨k, hk⟩`"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "现在我们有了 `c = 2 * m + 1` 和 `b = 2 * k + 1`。\n"
+"\n"
+"强大的 `omega` 策略可以自动解决这类线性整数运算问题。\n"
+"它能直接从 `c = 2*m+1` 和 `b = 2*k+1` 推导出 `c - b = 2 * (m - k)`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "目标变成了 `(2 * (m - k)) % 2 = 0`。\n"
+"\n"
+"这显然是真的，因为 `2 * ...` 必然能被2整除。\n"
+"使用 `exact Nat.mul_mod_right 2 (m - k)` 来完成证明。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "很好！现在用类似的方法证明 `(c + b) % 2 = 0`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "最后一步！\n"
+"我们已经证明了 `d ∣ 2` 和 `2 ∣ d`。\n"
+"根据整除的反对称性，这只能意味着 `d = 2`。\n"
+"\n"
+"使用 `exact Nat.dvd_antisymm ...`"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L05_Coprimality
+msgid "无懈可击的证明！\n"
+"\n"
+"你已经完成了第二大关中最困难的一步。我们现在知道了 `a² = (c - b) * (c + b)`，并且 `c - b` 和 `c + b` 的最大公因数是 2。\n"
+"\n"
+"这意味着 `(c-b)/2` 和 `(c+b)/2` 是互质的！它们的乘积是 `a²/4 = (a/2)²`，一个完美的平方数。\n"
+"\n"
+"是时候进入最后一关，召唤“平方分裂护符”，推导出最终的通解公式了！"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
-msgid "Hello World"
+msgid "通解推导"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
-msgid "This text is shown as first message when the level is played.\n"
-"You can insert hints in the proof below. They will appear in this side panel\n"
-"depending on the proof a user provides."
+msgid "旅途即将到达终点！我们已经集齐了所有必要的线索：\n"
+"\n"
+"1.  `a` 是偶数, `b` 和 `c` 是奇数。\n"
+"2.  `a² = (c - b) * (c + b)`\n"
+"3.  `Nat.gcd (c - b) (c + b) = 2`\n"
+"\n"
+"在这一关，我们将把这些线索串联起来，召唤来自第三世界的“平方分裂护符”，最终锻造出寻找所有本原勾股数组的通解公式！"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
-msgid "You can either start using `«{h}»` or `«{g}»`."
+msgid "`coprime_product_is_square {m n k : ℕ} (h_coprime : Nat.Coprime m n) (h_prod_sq : m * n = k ^ 2) : (∃ u v, m = u ^ 2 ∧ n = v ^ 2)`\n"
+"这是一个强大的定理：如果两个互质的数 `m` 和 `n` 的乘积是一个平方数 `k²`，那么 `m` 和 `n` 自身也必须是平方数。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
-msgid "You should use `«{h}»` now."
+msgid "我们的目标是找到满足条件的 `m` 和 `n`。\n"
+"\n"
+"从上一关我们知道 `Nat.gcd (c - b) (c + b) = 2`。\n"
+"这告诉我们 `(c - b) / 2` 和 `(c + b) / 2` 是互质的。\n"
+"\n"
+"让我们先证明这一点：`have h_coprime_div : Nat.Coprime ((c - b) / 2) ((c + b) / 2) := by ...`"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
-msgid "You should use `«{g}»` now."
+msgid "为了证明这两个数互质，我们需要证明它们的最大公约数等于1。\n"
+"\n"
+"设 `d' = Nat.gcd ((c - b) / 2) ((c + b) / 2)`。\n"
+"我们的策略是证明 `d'` 整除 `b` 和 `c`。"
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
-msgid "This last message appears if the level is solved."
+msgid "如果 `d'` 整除这两个数，它也必然整除它们的和与差。\n"
+"\n"
+"和: `((c - b) / 2) + ((c + b) / 2) = c`\n"
+"差: `((c + b) / 2) - ((c - b) / 2) = b`\n"
+"\n"
+"让我们先证明 `d'` 整除 `c`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "现在用同样的方法证明 `d'` 整除 `b`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "太棒了！我们证明了 `d'` 同时整除 `b` 和 `c`。\n"
+"这意味着 `d'` 必须整除它们的最大公约数 `Nat.gcd b c`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "我们已知 `b` 和 `c` 是互质的 (`h_coprime`)。这意味着它们的 `gcd` 是什么？"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "`d'` 整除 1，对于一个自然数来说，这意味着 `d'` 只能是 1。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "很好！现在我们有了两个互质的数。它们的乘积是什么呢？\n"
+"\n"
+"`(c - b) / 2 * ((c + b) / 2) = (c^2 - b^2) / 4 = a^2 / 4 = (a/2)^2`\n"
+"这是一个完美的平方数！\n"
+"\n"
+"让我们来证明 `(c - b) / 2 * ((c + b) / 2) = (a / 2) ^ 2`。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "现在，我们拥有了所有召唤神器的条件：\n"
+"1. 两个互质的数：`(c - b) / 2` 和 `(c + b) / 2`。\n"
+"2. 它们的乘积是一个平方数：`(a / 2) ^ 2`。\n"
+"\n"
+"是时候使用 `coprime_product_is_square` 了！"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "神器回应了我们的召唤！\n"
+"\n"
+"我们得到了 `n` 和 `m`，使得：\n"
+"`(c - b) / 2 = n ^ 2`\n"
+"`(c + b) / 2 = m ^ 2`\n"
+"\n"
+"现在，我们只需要用 `m` 和 `n` 来表示 `a, b, c`，并完成最后的证明。"
+msgstr ""
+
+#: Game.Levels.W02_PythagoreanTriples.L06_GeneralSolution
+msgid "... (证明过程未完待续) ..."
 msgstr ""
 
 #: Game.Levels.W02_PythagoreanTriples
@@ -663,9 +1066,9 @@ msgstr ""
 #: Game
 msgid "欢迎来到 Lean 的世界，证明者！\n"
 "\n"
-"在这场史诗般的旅程中，你将不仅仅是学习一门新的语言，更是要亲手重现数学史上最璀璨的明珠之一的之一——费马大定理（n=4情况）的证明。\n"
+"在这场史诗般的旅程中，你将不仅仅是学习一门新的语言，更是要亲手重现数学史上最璀璨的明珠之一——费马大定理（n=4情况）的证明。\n"
 "\n"
-"我们将从 Lean 的最基本操作开始，一步步为你装备强大的数论工具和逻辑策略。你将揭开勾股数的秘密，掌握“无穷递降法”这门古老的证明艺术，并最终集结所有智慧，向费马的终极挑战发起冲击。\n"
+"我们将从 Lean 的最基本操作开始，一步步为你装备强大的数论工具和逻辑策略。你将揭开勾股数的秘密，掌握“无限下降法”这门古老的证明艺术，并最终集结所有智慧，向费马的终极挑战发起冲击。\n"
 "\n"
 "准备好了吗？让我们开始铸造你的第一个证明吧！"
 msgstr ""
@@ -678,7 +1081,7 @@ msgid "### 游戏信息\n"
 "* **学习目标:**\n"
 "    * 掌握 Lean 4 的基本证明技巧。\n"
 "    * 理解勾股数的通解公式推导。\n"
-"    * 掌握“无穷递降法”的证明思想。\n"
+"    * 掌握“无限下降法”的证明思想。\n"
 "    * 独立完成费马大定理 n=4 情况的完整形式化证明。\n"
 "* **致谢:**\n"
 "    * 本游戏的证明思路基于历史上众多数学家的伟大工作。\n"
