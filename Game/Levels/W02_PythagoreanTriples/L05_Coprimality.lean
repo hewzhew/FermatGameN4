@@ -19,7 +19,7 @@ Introduction
 在这一关，我们的目标就是证明 `gcd(c - b, c + b) = 2`。我们将通过证明它们的最大公约数 `d` 既整除 2 又被 2 整除来完成。
 "
 
-Statement (a b c : Nat) (h_pyth : a^2 + b^2 = c^2) (h_a_even : Even a) (h_b_odd : Odd b) (h_c_odd : Odd c) (h_coprime : Nat.Coprime b c) : Nat.gcd (c - b) (c + b) = 2 := by
+Statement (a b c : Nat) (h_pyth : a^2 + b^2 = c^2) (h_b_odd : Odd b) (h_c_odd : Odd c) (h_coprime : Nat.Coprime b c) : Nat.gcd (c - b) (c + b) = 2 := by
   Hint "
   我们的目标是证明 `Nat.gcd (c - b) (c + b) = 2`。
 
@@ -47,7 +47,7 @@ Statement (a b c : Nat) (h_pyth : a^2 + b^2 = c^2) (h_a_even : Even a) (h_b_odd 
     exact h_d_div_sum
   have h_d_div_2b : d ∣ 2 * b := by
     have h_d_div_diff : d ∣ (c + b) - (c - b) := Nat.dvd_sub' h_d_div_add h_d_div_sub
-    rw [Nat.add_sub_sub_cancel h_b_le_c,← Nat.two_mul] at h_d_div_diff
+    rw [Nat.add_sub_sub_cancel h_b_le_c, ← Nat.two_mul] at h_d_div_diff
     exact h_d_div_diff
   Hint "
   现在我们知道 `d` 整除 `2*b` 和 `2*c`。这意味着 `d` 是 `2*b` 和 `2*c` 的公约数，所以它必须整除它们的最大公约数 `Nat.gcd (2 * b) (2 * c)`。"
@@ -68,10 +68,43 @@ Statement (a b c : Nat) (h_pyth : a^2 + b^2 = c^2) (h_a_even : Even a) (h_b_odd 
   现在，我们还需要证明 2 也整除 `d`。
   为此，我们只需证明 `c - b` 和 `c + b` 都是偶数，即都能被2整除。"
   have h_2_div_d : 2 ∣ d := by
+    Hint "
+    为了证明 `2 ∣ d`，我们需要先证明 `2` 是 `c-b` 和 `c+b` 的公因数。
+
+    让我们先证明 `(c - b) % 2 = 0`。"
     have h_sub_mod_2 : (c - b) % 2 = 0 := by
-      sorry
+      Hint "
+      这个目标等价于证明 `Even (c - b)`。
+
+      我们已知 `c` 和 `b` 都是奇数。让我们回到它们的定义：
+      `rcases h_c_odd with ⟨m, hm⟩`
+      `rcases h_b_odd with ⟨k, hk⟩`"
+      rcases h_c_odd with ⟨m, hm⟩
+      rcases h_b_odd with ⟨k, hk⟩
+      Hint "
+      现在我们有了 `c = 2 * m + 1` 和 `b = 2 * k + 1`。
+
+      强大的 `omega` 策略可以自动解决这类线性整数运算问题。
+      它能直接从 `c = 2*m+1` 和 `b = 2*k+1` 推导出 `c - b = 2 * (m - k)`。"
+      have h4 : c - b = 2 * (m - k) := by
+        omega
+      rw [h4]
+      Hint "
+      目标变成了 `(2 * (m - k)) % 2 = 0`。
+
+      这显然是真的，因为 `2 * ...` 必然能被2整除。
+      使用 `exact Nat.mul_mod_right 2 (m - k)` 来完成证明。"
+      exact Nat.mul_mod_right 2 (m - k)
+    Hint "
+    很好！现在用类似的方法证明 `(c + b) % 2 = 0`。"
     have h_add_mod_2 : (c + b) % 2 = 0 := by
-      sorry
+      rcases h_c_odd with ⟨m, hm⟩
+      rcases h_b_odd with ⟨k, hk⟩
+      have h3 : c + b = 2 * (m + k + 1) := by
+        rw [hm, hk]
+        omega
+      rw [h3]
+      exact Nat.mul_mod_right 2 (m + k + 1)
     have h_2_div_sub : 2 ∣ c - b := Nat.dvd_of_mod_eq_zero h_sub_mod_2
     have h_2_div_add : 2 ∣ c + b := Nat.dvd_of_mod_eq_zero h_add_mod_2
     exact Nat.dvd_gcd h_2_div_sub h_2_div_add
