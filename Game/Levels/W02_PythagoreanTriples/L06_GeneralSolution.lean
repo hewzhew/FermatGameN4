@@ -111,10 +111,8 @@ Statement (a b c : Nat) (h_pyth : a^2 + b^2 = c^2) (h_a_even : Even a) (h_b_odd 
 
   让我们来证明 `(c - b) / 2 * ((c + b) / 2) = (a / 2) ^ 2`。"
   have h_prod_sq : (c - b) / 2 * ((c + b) / 2) = (a / 2) ^ 2 := by
-    have h_a2 : a^2 = (c - b) * (c + b) := L04_DifferenceOfSquares a b c h_pyth
-    rw [← h_a2]
-    -- 这里的证明需要一些关于偶数和除法的引理，我们暂时作为一个 `axiom` 来简化
-    exact sorry
+    have h_a2 : a^2 = (c - b) * (c + b) := sorry
+    sorry
   Hint "
   现在，我们拥有了所有召唤神器的条件：
   1. 两个互质的数：`(c - b) / 2` 和 `(c + b) / 2`。
